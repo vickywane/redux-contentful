@@ -1,38 +1,49 @@
-.App {
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.text {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.hero {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 300px;
+  background-color: #FFF5E8;
+  margin-bottom: 50px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column;
+  /* border: 1px solid red; */
 }
 
-.App-link {
-  color: #61dafb;
+.hero-button {
+  height: 50px;
+  width: 350px;
+  border-radius: 30px;
+  border: 2px solid #000;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #FFED00;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero-button:hover {
+  cursor: pointer;
+}
+
+/* CRAFT CARD! */
+
+.card {
+  border: 1px solid black;
+  padding: 10px;
+  width: 20rem;
+}
+
+.cards-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
