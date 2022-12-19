@@ -15,5 +15,4 @@ const productSlice = createSlice({
   },
 });
 
-export const { fetchCraftworks } = productSlice.actions;
 export default productSlice;

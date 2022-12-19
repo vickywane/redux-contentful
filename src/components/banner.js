@@ -7,6 +7,12 @@ function App() {
   const [searchText, setSearchText] = useState("");
   const dispatch = useDispatch();
 
+  function handleSearch(e) {
+    e.preventDefault()
+
+    dispatch(fetchArtworks(searchText))
+  }
+
   return (
     <div className="hero">
       <h1> Pearson Wood Craft Store </h1>
@@ -16,7 +22,7 @@ function App() {
         from only the fine woods gathered across the world.
       </p>
 
-      <div className="banner-items">
+      <form onSubmit={handleSearch} className="banner-items">
         <div>
           <input
             value={searchText}
@@ -28,13 +34,13 @@ function App() {
 
         <div>
           <button
-            onClick={() => dispatch(fetchArtworks(searchText))}
+            onClick={handleSearch}
             className={"hero-button"}
           >
             Find Craftwork
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 }

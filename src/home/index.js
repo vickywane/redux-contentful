@@ -10,8 +10,10 @@ export function Index() {
   const { artworks } = useSelector((state) => state.products);
 
   React.useEffect(() => {
-    dispatch(fetchArtworks());
-  }, []);
+    dispatch(fetchArtworks())
+
+    return () => dispatch(fetchArtworks());
+  }, [dispatch]);
 
   return (
     <div>
