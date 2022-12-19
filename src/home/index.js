@@ -1,37 +1,43 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import Banner from '../components/banner'
-import CraftCard from '../components/CraftCard'
-import { fetchArtworks } from '../state/product.action'
-import '../App.css'
-
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Banner from "../components/banner";
+import CraftCard from "../components/Card";
+import { fetchArtworks } from "../state/product.action";
+import "../App.css";
 
 export function Index() {
-    const dispatch = useDispatch()
-    const { artworks } = useSelector((state) => state.products)
+  const dispatch = useDispatch();
+  const { artworks } = useSelector((state) => state.products);
 
-    React.useEffect(() => {
-        dispatch(fetchArtworks())
-    }, [])
+  React.useEffect(() => {
+    dispatch(fetchArtworks());
+  }, []);
 
-    return (
-        <div>
-            <Banner />
+  return (
+    <div>
+      <Banner />
 
-            <ul className='cards-list' >
-                {
-                    artworks.map(({ fields }, idx) => (
-                        <li id={idx} >
-                            <CraftCard
-                                description={fields.description}
-                                name={fields.name}
-                                price={fields.price}
-                            />
-                        </li>
-                    ))
-                }
-            </ul>
+      <div>
+        <p style={{ textAlign: "center" }} className="text">
+          {artworks.length} Craftwork {artworks.length > 1 && "s"} Available
+        </p>
+      </div>
 
-        </div>
-    )
+      <ul className="cards-list">
+        {artworks.map(({ fields }, idx) => {
+          return (
+            <li id={idx}>
+              <CraftCard
+                description={fields.description}
+                name={fields.name}
+                image={fields.image}
+                price={fields.price}
+                datePosted={fields.datePosted}
+              />
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
 }

@@ -11,39 +11,87 @@
 .hero {
   text-align: center;
   height: 300px;
-  background-color: #FFF5E8;
+  background-color: #fff5e8;
   margin-bottom: 50px;
+  padding: 40px 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* border: 1px solid red; */
 }
 
 .hero-button {
   height: 50px;
-  width: 350px;
-  border-radius: 30px;
+  width: 200px;
+  border-radius: 5px;
   border: 2px solid #000;
   font-size: 16px;
   font-weight: 600;
-  background-color: #FFED00;
+  background-color: #ffed00;
 }
 
 .hero-button:hover {
   cursor: pointer;
 }
 
+.searchbar {
+  height: 50px;
+  border-radius: 5px;
+  padding: 0 15px;
+  width: 30rem;
+  border: 1px solid #000;
+  font-size: 18px;
+}
+
+.banner-items {
+  display: grid;
+  grid-gap: 0 20px;
+  grid-template-columns: 70% 30%;
+}
+
 /* CRAFT CARD! */
 
 .card {
   border: 1px solid black;
-  padding: 10px;
-  width: 20rem;
+  padding: 10px 20px;
+  width: 25rem;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .cards-list {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+}
+
+.align-center {
+  display: flex;
+  justify-content: center;
+}
+
+.card-btn {
+  height: 50px;
+  background-color: #ffed00;
+  border: 1px solid#FFED00;
+  width: 100%;
+  font-size: 16px;
+}
+
+.card-btn:hover {
+  cursor: pointer;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.cover-image {
+  width: 100%;
 }
